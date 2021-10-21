@@ -5,14 +5,14 @@ describe("SAGAS", () => {
     it('should dispatch action "LOAD_CHARACTERS"', () => {
         const generator = charactersSaga();
         expect(generator.next().value)
-            .toEqual(takeLatest("LOAD_CHARACTERS", LoadCharacters));
+            .toEqual(takeLatest("LOAD_CHARACTER_ITEM", LoadCharacterById));
         expect(generator.next().done).toBeTruthy();
    });
    
    it('should dispatch action "LOAD_CHARACTER_ITEM"', () => {
     const generator = charactersSaga();
     expect(generator.next().value)
-        .toEqual(takeLatest("LOAD_CHARACTER_ITEM", LoadCharacterById));
+        .toEqual(takeLatest("LOAD_CHARACTERS", LoadCharacters));
     expect(generator.next().done).toBeTruthy();
 });
 
