@@ -11,7 +11,7 @@ import {
 import { Table, Col} from "antd";
 import { CaractherColumns } from "./CharacterColums";
 
-export const CharactersTable  = () => {
+const CharactersTable  = () => {
     const loading = useSelector(charactersLoadingSelector);
     const characters = useSelector(charactersPageSelector);
     const charactersRequestPayload = useSelector(charactersRequestPayloadSelector);
@@ -27,7 +27,7 @@ export const CharactersTable  = () => {
 
     const columns = CaractherColumns; 
 
-    const data = characters?.data?.results.map((item) => {
+    const data = characters?.results.map((item) => {
         return {
             ...item,
             key: item.id,
@@ -36,8 +36,9 @@ export const CharactersTable  = () => {
     });
 
     const pagination = {
+        showSizeChanger: false,
         pageSize: 20,
-        total: characters?.data?.total,
+        total: characters?.total,
     };
 
     const handleTableChange = (data, setData) => {
@@ -75,3 +76,5 @@ export const CharactersTable  = () => {
         </Col>
     );
 };
+
+export default CharactersTable;

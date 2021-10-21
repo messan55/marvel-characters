@@ -1,11 +1,11 @@
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import store from "./store/store";
-import { CharactersTable } from "./components/CharatersTable";
-import { CharacterItem } from "./components/CharacterItem";
-import 'antd/dist/antd.css';
+import store from "./store";
+import CharactersTable from "./components/CharatersTable";
+import CharacterItem from "./components/CharacterItem";
+import "antd/dist/antd.css";
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <Router>

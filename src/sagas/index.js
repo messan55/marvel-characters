@@ -3,7 +3,7 @@ import * as actions from "../actions";
 import { fetchCharacters, fetchCharacterById } from "../services";
 import { LOAD_CHARACTERS, LOAD_CHARACTER_ITEM } from "../types";
 
-function* LoadCharacters(action) {
+export function* LoadCharacters(action) {
     try {
         const charactersLoad = yield fetchCharacters(action.payload)
         console.log("[SAGA SUCCESS] values : ", charactersLoad);
@@ -14,7 +14,7 @@ function* LoadCharacters(action) {
     }
 }
 
-function* LoadCharacterById(action) {
+export function* LoadCharacterById(action) {
     try {
         const characterLoad = yield fetchCharacterById(action.payload)
         console.log("[SAGA SUCCESS] values : ", characterLoad);
@@ -25,7 +25,7 @@ function* LoadCharacterById(action) {
     }
 }
 
-export default function* sagas() {
+export function* charactersSaga() {
     yield takeLatest(LOAD_CHARACTERS, LoadCharacters);
     yield takeLatest(LOAD_CHARACTER_ITEM, LoadCharacterById);
 }

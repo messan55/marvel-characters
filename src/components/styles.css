@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.clickable:hover {
+  cursor: pointer;
+}
+
 .character {
   display: flex;
   flex-direction: column;

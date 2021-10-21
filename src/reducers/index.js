@@ -15,7 +15,6 @@ const INITIAL_STATE = {
         limit: 20,
         offset: 0
     },
-    showNavigation: false,
     filesCharacters: undefined,
     filesCharacterItem: undefined
 }
